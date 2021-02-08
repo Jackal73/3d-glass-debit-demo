@@ -1,5 +1,5 @@
-/*noinspection CssUnknownTarget*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;800&family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+
 
 * {
     margin: 0;
@@ -37,6 +37,7 @@ section::before {
     height: 314px;
     transform-style: preserve-3d;
     perspective: 500px;
+
 }
 .card .face {
     position: absolute;
@@ -50,9 +51,10 @@ section::before {
     backdrop-filter: blur(10px);
     transform-style: preserve-3d;
     transition: 1s;
+
 }
 
-.card .face .front::before {
+.card .face.front::before {
     content: '';
     position: absolute;
     bottom: 40px;
@@ -64,7 +66,7 @@ section::before {
     opacity: 0.5;
 }
 
-.card .face .front::after {
+.card .face.front::after {
     content: '';
     position: absolute;
     bottom: 40px;
@@ -74,6 +76,73 @@ section::before {
     background: #fff;
     border-radius: 50%;
     opacity: 0.7;
+}
+
+.card .face.front .debit {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.card .face.front .bank {
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    color: #fff;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+}
+
+.card .face.front .chip {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    max-width: 64px;
+}
+
+.card .face.front .number {
+    position: absolute;
+    bottom: 130px;
+    left: 40px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 6px;
+    font-size: 18px;
+    text-shadow: 0 2px 1px #0005;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card .face.front .valid {
+    position: absolute;
+    bottom: 90px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1rem;
+    text-align: right;
+}
+
+.card .face.front .valid span:last-child {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.card .face.front .cardHolder {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
 
