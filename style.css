@@ -27,14 +27,14 @@ section::before {
     left: 40%;
     width: 600px;
     height: 600px;
-    background: linear-gradient(#f00, #f0f);
+    background: linear-gradient(#9b649b, #f50217);
     border-radius: 50%;
 }
 
 .card {
     position: relative;
-    width: 508px;
-    height: 314px;
+    width: 486px;
+    height: 306px;
     transform-style: preserve-3d;
     perspective: 500px;
 
@@ -51,17 +51,29 @@ section::before {
     backdrop-filter: blur(10px);
     transform-style: preserve-3d;
     transition: 1s;
+    backface-visibility: hidden;
+}
 
+.card:hover .face.front {
+    transform: rotateY(180deg);
+}
+
+.card .face.back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .face.back {
+    transform: rotateY(360deg);
 }
 
 .card .face.front::before {
     content: '';
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     right: 40px;
     width: 60px;
     height: 60px;
-    background: #fff;
+    background: #eb001b;
     border-radius: 50%;
     opacity: 0.5;
 }
@@ -69,37 +81,43 @@ section::before {
 .card .face.front::after {
     content: '';
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     right: 80px;
     width: 60px;
     height: 60px;
-    background: #fff;
+    background: #f79e1b;
     border-radius: 50%;
     opacity: 0.7;
 }
 
 .card .face.front .debit {
     position: absolute;
-    left: 40px;
-    top: 30px;
+    right: 40px;
+    top: 25px;
     color: #fff;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .card .face.front .bank {
     position: absolute;
-    right: 40px;
-    top: 25px;
+    left: 40px;
+    top: 20px;
     color: #fff;
     font-weight: 500;
-    font-style: italic;
-    font-size: 24px;
+    font-size: 26px;
+    font-family: serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.card .face.front .bank .bank-span {
+    font-size: 32px;
 }
 
 .card .face.front .chip {
     position: absolute;
-    top: 80px;
-    left: 50px;
+    top: 90px;
+    left: 40px;
     max-width: 64px;
 }
 
@@ -110,15 +128,16 @@ section::before {
     color: #fff;
     font-weight: 500;
     letter-spacing: 6px;
-    font-size: 18px;
+    font-size: 22px;
     text-shadow: 0 2px 1px #0005;
     font-family: 'Orbitron', sans-serif;
+    line-height: 1.3;
 }
 
 .card .face.front .valid {
     position: absolute;
-    bottom: 90px;
-    left: 40px;
+    bottom: 80px;
+    left: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +162,72 @@ section::before {
     font-weight: 300;
     font-size: 16px;
     letter-spacing: 2px;
+}
+
+.card .face.back .bankEmail {
+    position: absolute;
+    top: 7px;
+    right: 200px;
+    color: #fff;
+    font-size: 10px;
+    line-height: .9rem;
+    font-weight: 300;
+}
+
+.card .face.back .blackbar {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 60px;
+    background: #000;
+}
+
+.card .face.back .ccvtext {
+    position: absolute;
+    top: 110px;
+    left: 30px;
+}
+
+.card .face.back .ccvtext h5 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .face.back .ccvtext .whiteBar {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.card .face.back .ccvtext .ccv {
+    position: relative;
+    top: -39px;
+    left: 300px;
+    background: #ccc;
+    color: #111;
+    width: 50px;
+    height: 39px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .face.back .text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 10px;
+    line-height: .9rem;
+    font-weight: 300;
 }
 
 
